@@ -15,3 +15,29 @@ export const layout = () => {
     },
   };
 };
+
+export const qiankun = {
+  lifeCycles: {
+    // 所有子应用在挂载完成时，打印 props 信息
+    async afterMount(props: any) {
+      console.log('propspropsprops', props);
+    },
+  },
+};
+
+import { useState } from 'react';
+// 主应用透传数据
+export function useQiankunStateForSlave() {
+  const [globalState, setGlobalState] = useState<any>({
+    slogan: '这是主应用的数据',
+  });
+
+  const setGlobalState2 = (a)=>{
+    setGlobalState(a)
+  }
+  return {
+    globalState,
+    setGlobalState,
+    setGlobalState2,
+  };
+}

@@ -66,6 +66,11 @@ export default defineConfig({
         {
           name: 'app2',
           entry: '//localhost:8003',
+          props: {
+            accountOnClick: (event: any) => console.log(event),
+            accountName: 'Alex',
+            accountAge: 21,
+          },
         },
       ],
     },

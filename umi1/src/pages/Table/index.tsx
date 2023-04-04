@@ -133,7 +133,13 @@ const TableList: React.FC<unknown> = () => {
             配置
           </a>
           <Divider type="vertical" />
-          <a href="">订阅警报</a>
+          <a
+            onClick={() => {
+              setRow(record);
+            }}
+          >
+            订阅警报
+          </a>
         </>
       ),
     },
@@ -251,7 +257,7 @@ const TableList: React.FC<unknown> = () => {
       >
         {row?.name && (
           <ProDescriptions<API.UserInfo>
-            column={2}
+            column={3}
             title={row?.name}
             request={async () => ({
               data: row || {},

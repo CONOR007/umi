@@ -12,11 +12,11 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      redirect: '/home2',
+      redirect: '/home',
     },
     {
       name: '首页',
-      path: '/home2',
+      path: '/home',
       component: './Home',
       // 不展示顶栏
       headerRender: false,
